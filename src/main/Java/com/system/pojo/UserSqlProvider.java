@@ -22,10 +22,6 @@ public class UserSqlProvider {
         BEGIN();
         INSERT_INTO("user");
         
-        if (record.getUserid() != null) {
-            VALUES("userId", "#{userid,jdbcType=INTEGER}");
-        }
-        
         if (record.getTelephone() != null) {
             VALUES("telephone", "#{telephone,jdbcType=INTEGER}");
         }
@@ -38,32 +34,32 @@ public class UserSqlProvider {
             VALUES("`password`", "#{password,jdbcType=VARCHAR}");
         }
         
-        if (record.getPasswordsalt() != null) {
-            VALUES("passwordSalt", "#{passwordsalt,jdbcType=VARCHAR}");
+        if (record.getPasswordSalt() != null) {
+            VALUES("passwordSalt", "#{passwordSalt,jdbcType=VARCHAR}");
         }
         
-        if (record.getNickname() != null) {
-            VALUES("nickName", "#{nickname,jdbcType=VARCHAR}");
+        if (record.getNickName() != null) {
+            VALUES("nickName", "#{nickName,jdbcType=VARCHAR}");
         }
         
         if (record.getEmail() != null) {
             VALUES("email", "#{email,jdbcType=VARCHAR}");
         }
         
-        if (record.getCreatedate() != null) {
-            VALUES("createDate", "#{createdate,jdbcType=INTEGER}");
+        if (record.getCreateDate() != null) {
+            VALUES("createDate", "#{createDate,jdbcType=INTEGER}");
         }
         
-        if (record.getCreateip() != null) {
-            VALUES("createIp", "#{createip,jdbcType=INTEGER}");
+        if (record.getCreateIp() != null) {
+            VALUES("createIp", "#{createIp,jdbcType=INTEGER}");
         }
         
-        if (record.getLastupdatedate() != null) {
-            VALUES("lastUpdateDate", "#{lastupdatedate,jdbcType=INTEGER}");
+        if (record.getLastUpdateDate() != null) {
+            VALUES("lastUpdateDate", "#{lastUpdateDate,jdbcType=INTEGER}");
         }
         
-        if (record.getLastupdateip() != null) {
-            VALUES("lastUpdateIp", "#{lastupdateip,jdbcType=INTEGER}");
+        if (record.getLastUpdateIp() != null) {
+            VALUES("lastUpdateIp", "#{lastUpdateIp,jdbcType=INTEGER}");
         }
         
         return SQL();
@@ -91,35 +87,35 @@ public class UserSqlProvider {
             SET("`password` = #{password,jdbcType=VARCHAR}");
         }
         
-        if (record.getPasswordsalt() != null) {
-            SET("passwordSalt = #{passwordsalt,jdbcType=VARCHAR}");
+        if (record.getPasswordSalt() != null) {
+            SET("passwordSalt = #{passwordSalt,jdbcType=VARCHAR}");
         }
         
-        if (record.getNickname() != null) {
-            SET("nickName = #{nickname,jdbcType=VARCHAR}");
+        if (record.getNickName() != null) {
+            SET("nickName = #{nickName,jdbcType=VARCHAR}");
         }
         
         if (record.getEmail() != null) {
             SET("email = #{email,jdbcType=VARCHAR}");
         }
         
-        if (record.getCreatedate() != null) {
-            SET("createDate = #{createdate,jdbcType=INTEGER}");
+        if (record.getCreateDate() != null) {
+            SET("createDate = #{createDate,jdbcType=INTEGER}");
         }
         
-        if (record.getCreateip() != null) {
-            SET("createIp = #{createip,jdbcType=INTEGER}");
+        if (record.getCreateIp() != null) {
+            SET("createIp = #{createIp,jdbcType=INTEGER}");
         }
         
-        if (record.getLastupdatedate() != null) {
-            SET("lastUpdateDate = #{lastupdatedate,jdbcType=INTEGER}");
+        if (record.getLastUpdateDate() != null) {
+            SET("lastUpdateDate = #{lastUpdateDate,jdbcType=INTEGER}");
         }
         
-        if (record.getLastupdateip() != null) {
-            SET("lastUpdateIp = #{lastupdateip,jdbcType=INTEGER}");
+        if (record.getLastUpdateIp() != null) {
+            SET("lastUpdateIp = #{lastUpdateIp,jdbcType=INTEGER}");
         }
         
-        WHERE("userId = #{userid,jdbcType=INTEGER}");
+        WHERE("userId = #{userId,jdbcType=INTEGER}");
         
         return SQL();
     }
