@@ -22,16 +22,48 @@ public class UserSqlProvider {
         BEGIN();
         INSERT_INTO("user");
         
-        if (record.getId() != null) {
-            VALUES("id", "#{id,jdbcType=INTEGER}");
+        if (record.getUserid() != null) {
+            VALUES("userId", "#{userid,jdbcType=INTEGER}");
         }
         
-        if (record.getUsername() != null) {
-            VALUES("userName", "#{username,jdbcType=VARCHAR}");
+        if (record.getTelephone() != null) {
+            VALUES("telephone", "#{telephone,jdbcType=INTEGER}");
+        }
+        
+        if (record.getType() != null) {
+            VALUES("`type`", "#{type,jdbcType=INTEGER}");
         }
         
         if (record.getPassword() != null) {
             VALUES("`password`", "#{password,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPasswordsalt() != null) {
+            VALUES("passwordSalt", "#{passwordsalt,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getNickname() != null) {
+            VALUES("nickName", "#{nickname,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getEmail() != null) {
+            VALUES("email", "#{email,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getCreatedate() != null) {
+            VALUES("createDate", "#{createdate,jdbcType=INTEGER}");
+        }
+        
+        if (record.getCreateip() != null) {
+            VALUES("createIp", "#{createip,jdbcType=INTEGER}");
+        }
+        
+        if (record.getLastupdatedate() != null) {
+            VALUES("lastUpdateDate", "#{lastupdatedate,jdbcType=INTEGER}");
+        }
+        
+        if (record.getLastupdateip() != null) {
+            VALUES("lastUpdateIp", "#{lastupdateip,jdbcType=INTEGER}");
         }
         
         return SQL();
@@ -47,15 +79,47 @@ public class UserSqlProvider {
         BEGIN();
         UPDATE("user");
         
-        if (record.getUsername() != null) {
-            SET("userName = #{username,jdbcType=VARCHAR}");
+        if (record.getTelephone() != null) {
+            SET("telephone = #{telephone,jdbcType=INTEGER}");
+        }
+        
+        if (record.getType() != null) {
+            SET("`type` = #{type,jdbcType=INTEGER}");
         }
         
         if (record.getPassword() != null) {
             SET("`password` = #{password,jdbcType=VARCHAR}");
         }
         
-        WHERE("id = #{id,jdbcType=INTEGER}");
+        if (record.getPasswordsalt() != null) {
+            SET("passwordSalt = #{passwordsalt,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getNickname() != null) {
+            SET("nickName = #{nickname,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getEmail() != null) {
+            SET("email = #{email,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getCreatedate() != null) {
+            SET("createDate = #{createdate,jdbcType=INTEGER}");
+        }
+        
+        if (record.getCreateip() != null) {
+            SET("createIp = #{createip,jdbcType=INTEGER}");
+        }
+        
+        if (record.getLastupdatedate() != null) {
+            SET("lastUpdateDate = #{lastupdatedate,jdbcType=INTEGER}");
+        }
+        
+        if (record.getLastupdateip() != null) {
+            SET("lastUpdateIp = #{lastupdateip,jdbcType=INTEGER}");
+        }
+        
+        WHERE("userId = #{userid,jdbcType=INTEGER}");
         
         return SQL();
     }
